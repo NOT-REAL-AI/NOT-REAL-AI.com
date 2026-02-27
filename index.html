@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Серёжа и девушки · фото + голос</title>
+    <title>Три девушки · фото + голос</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -21,7 +21,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
         }
         h1 {
@@ -56,7 +56,7 @@
             width: 100%;
             max-width: 900px;
             margin: 0 auto;
-            border-radius: 50px;
+            border-radius: 30px;
             overflow: hidden;
             border: 4px solid #ff6b6b;
         }
@@ -72,45 +72,53 @@
             font-weight: 700;
             color: #ffdab9;
         }
-        /* Карточки девушек с фото */
+        /* Карточки девушек с большими квадратными фото */
         .girls-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 40px;
             margin: 50px 0;
         }
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
+            .girls-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
             .girls-grid { grid-template-columns: 1fr; }
         }
         .girl-card {
             background: rgba(255,255,255,0.05);
             backdrop-filter: blur(15px);
             border: 2px solid rgba(255,107,107,0.6);
-            border-radius: 50px;
-            padding: 35px 20px;
+            border-radius: 40px;
+            padding: 30px 20px 40px;
             text-align: center;
             transition: 0.4s;
-            cursor: pointer;
         }
         .girl-card:hover {
-            transform: translateY(-20px) scale(1.02);
+            transform: translateY(-15px) scale(1.02);
             border-color: #ffb347;
             box-shadow: 0 30px 70px #ff3e3e80;
         }
-        .girl-photo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            object-fit: cover;
+        .photo-frame {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            margin-bottom: 25px;
+            border-radius: 30px;
+            overflow: hidden;
             border: 6px solid;
-            background: #2a1a1a;
+            box-shadow: 0 20px 40px black;
         }
-        .girl-photo.s { border-color: #ff7eb3; }
-        .girl-photo.l { border-color: #c7a2ff; }
-        .girl-photo.a { border-color: #ffdb7e; }
+        .photo-frame.s { border-color: #ff7eb3; }
+        .photo-frame.l { border-color: #c7a2ff; }
+        .photo-frame.a { border-color: #ffdb7e; }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
         .girl-name {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 900;
             margin: 15px 0 10px;
         }
@@ -122,11 +130,11 @@
             border: none;
             color: white;
             padding: 18px 35px;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             border-radius: 60px;
             cursor: pointer;
             font-weight: 700;
-            margin: 15px 0;
+            margin: 20px 0 10px;
             width: 100%;
             transition: 0.2s;
             border: 2px solid white;
@@ -135,102 +143,78 @@
             transform: scale(0.95);
             background: #ff99bb;
         }
-        .sound-btn.sergei-btn {
-            background: linear-gradient(145deg, #4a90e2, #a463f5);
-        }
-        /* Сергей отдельно */
-        .sergei-block {
-            background: rgba(255,255,240,0.05);
-            border: 3px solid #ff8c42;
-            border-radius: 70px;
-            padding: 40px;
-            margin: 40px 0;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-around;
-        }
-        .sergei-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 6px solid #ff6b6b;
-            object-fit: cover;
-            margin: 20px;
+        .voice-label {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            font-style: italic;
         }
         .footer {
             text-align: center;
             color: rgba(255,255,255,0.3);
             margin-top: 70px;
+            font-size: 1.2rem;
         }
         audio { display: none; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>СЕРЁЖА ⋆ ТРИ ГРАНИ</h1>
-        <div class="sub">фото · голоса · флирт</div>
+        <h1>⋆ ТРИ ДЕВУШКИ ⋆</h1>
+        <div class="sub">каждая со своим голосом</div>
 
-        <!-- Видео-трейлер -->
+        <!-- Видео-трейлер (можно убрать, если не нужно) -->
         <div class="video-section">
             <div class="video-wrapper">
-                <video controls poster="https://cdn.globalsportsystems.org/portraits/2021/2009/md/62704b8ba34bb.webp">
+                <video controls>
                     <source src="kling_20260227_Text_to_Video____________4706_0.mp4" type="video/mp4">
-                    Твой браузер не поддерживает видео.
                 </video>
             </div>
-            <div class="video-caption">🎬 ТРЕЙЛЕР (5 секунд)</div>
+            <div class="video-caption">🎬 тизер</div>
         </div>
 
-        <!-- Три девушки с их фото и голосами -->
+        <!-- Три девушки с большими квадратными фото -->
         <div class="girls-grid">
-            <!-- Саша (С) с фото С.png и голосом devochka-tanya_4038402.mp3 -->
+            <!-- Саша -->
             <div class="girl-card">
-                <img src="С.png" alt="Саша" class="girl-photo s">
+                <div class="photo-frame s">
+                    <img src="С.png" alt="Саша">
+                </div>
                 <div class="girl-name name-s">САША</div>
                 <audio id="audioS">
                     <source src="devochka-tanya_4038402.mp3" type="audio/mpeg">
                 </audio>
-                <button class="sound-btn" onclick="playSound('audioS')">🔊 Слушать Сашу</button>
-                <p style="color:#aaa; margin-top:15px;">«нежный шёпот»</p>
+                <button class="sound-btn" onclick="playSound('audioS')">🔊 СЛУШАТЬ</button>
+                <div class="voice-label">нежный шёпот</div>
             </div>
-            <!-- Лида (Л) с фото Л.png и голосом malchik-petya_4038416.mp3 -->
+            <!-- Лида -->
             <div class="girl-card">
-                <img src="Л.png" alt="Лида" class="girl-photo l">
+                <div class="photo-frame l">
+                    <img src="Л.png" alt="Лида">
+                </div>
                 <div class="girl-name name-l">ЛИДА</div>
                 <audio id="audioL">
                     <source src="malchik-petya_4038416.mp3" type="audio/mpeg">
                 </audio>
-                <button class="sound-btn" onclick="playSound('audioL')">🔊 Слушать Лиду</button>
-                <p style="color:#aaa; margin-top:15px;">«игривый шёпот»</p>
+                <button class="sound-btn" onclick="playSound('audioL')">🔊 СЛУШАТЬ</button>
+                <div class="voice-label">игривый шёпот</div>
             </div>
-            <!-- Аня (А) с фото А.png и голосом borislav_4038387.mp3 -->
+            <!-- Аня -->
             <div class="girl-card">
-                <img src="А.png" alt="Аня" class="girl-photo a">
+                <div class="photo-frame a">
+                    <img src="А.png" alt="Аня">
+                </div>
                 <div class="girl-name name-a">АНЯ</div>
                 <audio id="audioA">
                     <source src="borislav_4038387.mp3" type="audio/mpeg">
                 </audio>
-                <button class="sound-btn" onclick="playSound('audioA')">🔊 Слушать Аню</button>
-                <p style="color:#aaa; margin-top:15px;">«самый сладкий голос»</p>
-            </div>
-        </div>
-
-        <!-- Блок Сергея -->
-        <div class="sergei-block">
-            <img src="https://cdn.globalsportsystems.org/portraits/2021/2009/md/62704b8ba34bb.webp" alt="Серёжа" class="sergei-photo">
-            <div style="text-align:center;">
-                <h2 style="font-size:3rem; color:#ff8c42;">СЕРГЕЙ</h2>
-                <audio id="audioSergei">
-                    <source src="borislav_4038387.mp3" type="audio/mpeg">
-                </audio>
-                <button class="sound-btn sergei-btn" onclick="playSound('audioSergei')">🔊 Голос Сергея</button>
-                <p style="margin-top:20px;">«он тоже хочет сказать»</p>
+                <button class="sound-btn" onclick="playSound('audioA')">🔊 СЛУШАТЬ</button>
+                <div class="voice-label">самый сладкий голос</div>
             </div>
         </div>
 
         <div class="footer">
-            ❤️ каждая буква — живая ❤️
+            ❤️ нажми на кнопку — услышишь голос ❤️
         </div>
     </div>
 
